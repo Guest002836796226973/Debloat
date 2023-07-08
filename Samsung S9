@@ -1,8 +1,8 @@
 echo off
 echo ligne de commande
-echo adb shell cmd package install-existing com.
-echo adb shell pm uninstall -k --user 0 com.
-echo adb shell pm list packages
+echo "adb shell cmd package install-existing" com.
+echo "adb shell pm uninstall -k --user 0" com.
+echo "adb shell pm list packages"
 cd C:/android
 echo Brancher votre appareille
 pause
@@ -13,6 +13,7 @@ cls
 echo Votre choix est:
 echo 1. Lancer le "debloat"
 echo 2. Desinstaller MyFiles explorateur
+echo Attention, installer un autre exploreur de fichier (ci-dessous) 
 set /p choix=Que voulez-vous faire ?
 if %choix%==1 goto choix01
 if %choix%==2 goto choix02
@@ -379,7 +380,6 @@ adb shell pm uninstall -k --user 0 fr.bouyguestelecom.agent.custo
 goto fin
 :choix02
 echo Desinstallation de MyFiles explorateur
-# Attention, installer un autre exploreur de fichier (ci-dessous) 
 adb shell pm uninstall -k --user 0 com.sec.android.app.myfiles
 adb shell pm uninstall -k --user 0 com.android.documentsui
 pause
