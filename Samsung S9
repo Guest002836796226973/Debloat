@@ -1,26 +1,3 @@
-echo off
-echo ligne de commande
-echo "adb shell cmd package install-existing" com.
-echo "adb shell pm uninstall -k --user 0" com.
-echo "adb shell pm list packages"
-cd C:/android
-echo Brancher votre appareille
-pause
-adb devices
-echo off
-:1
-cls
-echo Votre choix est:
-echo 1. Lancer le "debloat"
-echo 2. Desinstaller MyFiles explorateur
-echo (Attention, installer un autre exploreur de fichier)
-echo 3. Reinstaller MyFiles explorateur
-set /p choix=Que voulez-vous faire ?
-if %choix%==1 goto choix01
-if %choix%==2 goto choix02
-if %choix%==3 goto choix03
-:choix01
-echo Debloat en cours...
 adb shell pm uninstall -k --user 0 android.autoinstalls.config.samsung
 adb shell pm uninstall -k --user 0 android.auto_generated_rro_vendor__
 adb shell pm uninstall -k --user 0 com.android.apps.tag
@@ -379,14 +356,5 @@ adb shell pm uninstall -k --user 0 com.wsomacp
 adb shell pm uninstall -k --user 0 com.wssyncmldm
 adb shell pm uninstall -k --user 0 de.axelspringer.yana.zeropage
 adb shell pm uninstall -k --user 0 fr.bouyguestelecom.agent.custo
-goto fin
-:choix02
-echo Desinstallation de MyFiles explorateur
 adb shell pm uninstall -k --user 0 com.sec.android.app.myfiles
 adb shell pm uninstall -k --user 0 com.android.documentsui
-goto fin
-:choix03
-echo Installation de MyFiles explorateur
-adb shell cmd package install-existing com.sec.android.app.myfiles
-adb shell cmd package install-existing com.android.documentsui
-pause
