@@ -1,5 +1,37 @@
-adb shell pm uninstall -k --user 0 android.autoinstalls.config.samsung
+echo ligne de commande:
+echo Liste d'application, requete.
+echo adb shell pm list packages
+echo .
+echo Installation.
+echo adb shell cmd package install-existing "com.example.xx.x"
+echo Desinstallation.
+echo adb shell pm uninstall -k --user 0 "com.example.xx.x"
+echo .
+cls
+echo Votre choix est:
+echo 1. Lancer le "Spray Cafard"
+echo 2. Desinstaller MyFiles explorateur
+echo (Attention, installer un autre exploreur de fichier)
+echo 3. Reinstaller MyFiles explorateur
+set /p choix=Que voulez-vous faire?
+if %choix%==1 goto choix01
+if %choix%==2 goto choix02
+if %choix%==3 goto choix03
+:choix01
+echo Brancher votre appareille
+echo ^<appuyez sur une touche pour continuer^>
+pause>NUL
+cd C:\Android
+adb devices
+echo Accepter la notification sur votre apparaeil Android
+echo ^<appuyez sur une touche pour continuer^>
+pause>NUL
+echo Spray Cafard! en cours...
+#adb shell pm uninstall -k --user 0 com.android.keychain
+#adb shell pm uninstall -k --user 0 com.samsung.klmsagent
+#adb shell pm uninstall -k --user 0 com.samsung.knox.keychain
 adb shell pm uninstall -k --user 0 android.auto_generated_rro_vendor__
+adb shell pm uninstall -k --user 0 android.autoinstalls.config.samsung
 adb shell pm uninstall -k --user 0 com.android.apps.tag
 adb shell pm uninstall -k --user 0 com.android.backupconfirm
 adb shell pm uninstall -k --user 0 com.android.bips
@@ -20,7 +52,6 @@ adb shell pm uninstall -k --user 0 com.android.hotwordenrollment.xgoogle
 adb shell pm uninstall -k --user 0 com.android.htmlviewer
 adb shell pm uninstall -k --user 0 com.android.internal.display.cutout.emulation.corner
 adb shell pm uninstall -k --user 0 com.android.internal.display.cutout.emulation.double
-adb shell pm uninstall -k --user 0 com.android.keychain
 adb shell pm uninstall -k --user 0 com.android.managedprovisioning
 adb shell pm uninstall -k --user 0 com.android.networkstack.permissionconfig
 adb shell pm uninstall -k --user 0 com.android.nfc
@@ -28,6 +59,7 @@ adb shell pm uninstall -k --user 0 com.android.printspooler
 adb shell pm uninstall -k --user 0 com.android.providers.calendar
 adb shell pm uninstall -k --user 0 com.android.providers.partnerbookmarks
 adb shell pm uninstall -k --user 0 com.android.providers.userdictionary
+adb shell pm uninstall -k --user 0 com.android.sharedstoragebackup
 adb shell pm uninstall -k --user 0 com.android.stk
 adb shell pm uninstall -k --user 0 com.android.stk2
 adb shell pm uninstall -k --user 0 com.android.theme.color.black
@@ -256,8 +288,6 @@ adb shell pm uninstall -k --user 0 com.samsung.gpuwatchapp
 adb shell pm uninstall -k --user 0 com.samsung.hiddennetworksetting
 adb shell pm uninstall -k --user 0 com.samsung.ims.smk
 adb shell pm uninstall -k --user 0 com.samsung.ipservice
-adb shell pm uninstall -k --user 0 com.samsung.klmsagent
-adb shell pm uninstall -k --user 0 com.samsung.knox.keychain
 adb shell pm uninstall -k --user 0 com.samsung.knox.securefolder
 adb shell pm uninstall -k --user 0 com.samsung.knox.securefolder.setuppage
 adb shell pm uninstall -k --user 0 com.samsung.oda.service
@@ -269,12 +299,14 @@ adb shell pm uninstall -k --user 0 com.samsung.storyservice
 adb shell pm uninstall -k --user 0 com.samsung.systemui.bixby2
 adb shell pm uninstall -k --user 0 com.samsung.ucs.agent.boot
 adb shell pm uninstall -k --user 0 com.samsung.ucs.agent.ese
+adb shell pm uninstall -k --user 0 com.sec.android.RilServiceModeApp
+adb shell pm uninstall -k --user 0 com.sec.android.app.DataCreate
+adb shell pm uninstall -k --user 0 com.sec.android.app.SecSetupWizard
 adb shell pm uninstall -k --user 0 com.sec.android.app.apex
 adb shell pm uninstall -k --user 0 com.sec.android.app.applinker
 adb shell pm uninstall -k --user 0 com.sec.android.app.billing
 adb shell pm uninstall -k --user 0 com.sec.android.app.bluetoothtest
 adb shell pm uninstall -k --user 0 com.sec.android.app.chromecustomizations
-adb shell pm uninstall -k --user 0 com.sec.android.app.DataCreate
 adb shell pm uninstall -k --user 0 com.sec.android.app.dexonpc
 adb shell pm uninstall -k --user 0 com.sec.android.app.factorykeystring
 adb shell pm uninstall -k --user 0 com.sec.android.app.hwmoduletest
@@ -289,7 +321,6 @@ adb shell pm uninstall -k --user 0 com.sec.android.app.ringtoneBR
 adb shell pm uninstall -k --user 0 com.sec.android.app.safetyassurance
 adb shell pm uninstall -k --user 0 com.sec.android.app.samsungapps
 adb shell pm uninstall -k --user 0 com.sec.android.app.sbrowser
-adb shell pm uninstall -k --user 0 com.sec.android.app.SecSetupWizard
 adb shell pm uninstall -k --user 0 com.sec.android.app.servicemodeapp
 adb shell pm uninstall -k --user 0 com.sec.android.app.setupwizardlegalprovider
 adb shell pm uninstall -k --user 0 com.sec.android.app.shealth
@@ -307,7 +338,6 @@ adb shell pm uninstall -k --user 0 com.sec.android.inputmethod
 adb shell pm uninstall -k --user 0 com.sec.android.mimage.avatarstickers
 adb shell pm uninstall -k --user 0 com.sec.android.preloadinstaller
 adb shell pm uninstall -k --user 0 com.sec.android.provider.emergencymode
-adb shell pm uninstall -k --user 0 com.sec.android.RilServiceModeApp
 adb shell pm uninstall -k --user 0 com.sec.android.sdhms
 adb shell pm uninstall -k --user 0 com.sec.android.sdk.health
 adb shell pm uninstall -k --user 0 com.sec.android.service.health
@@ -356,5 +386,30 @@ adb shell pm uninstall -k --user 0 com.wsomacp
 adb shell pm uninstall -k --user 0 com.wssyncmldm
 adb shell pm uninstall -k --user 0 de.axelspringer.yana.zeropage
 adb shell pm uninstall -k --user 0 fr.bouyguestelecom.agent.custo
+echo ^<appuyez sur une touche pour quitter^>
+pause>NUL
+exit 0
+:choix02
+cd C:\Android
+adb devices
+echo Brancher votre appareille
+echo ^<appuyez sur une touche pour continuer^>
+pause>NUL
+echo Desinstallation de MyFiles explorateur
 adb shell pm uninstall -k --user 0 com.sec.android.app.myfiles
 adb shell pm uninstall -k --user 0 com.android.documentsui
+echo ^<appuyez sur une touche pour quitter^>
+pause>NUL
+exit 0
+:choix03
+cd C:\Android
+adb devices
+echo Brancher votre appareille
+echo ^<appuyez sur une touche pour continuer^>
+pause>NUL
+echo Installation de MyFiles explorateur
+adb shell cmd package install-existing com.sec.android.app.myfiles
+adb shell cmd package install-existing com.android.documentsui
+echo ^<appuyez sur une touche pour quitter^>
+pause>NUL
+exit 0
