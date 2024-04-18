@@ -1,13 +1,4 @@
 echo off
-echo ligne de commande:
-echo Liste d'application, requete.
-echo adb shell pm list packages
-echo .
-echo Installation.
-echo adb shell cmd package install-existing "com.example.xx.x"
-echo Desinstallation.
-echo adb shell pm uninstall -k --user 0 "com.example.xx.x"
-echo .
 cls
 echo Votre choix est:
 echo 1. Lancer le "Spray Cafard"
