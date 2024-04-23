@@ -738,9 +738,9 @@ adb shell pm clear com.wssyncmldm
 adb shell pm clear de.axelspringer.yana.zeropage
 adb shell pm clear fr.bouyguestelecom.agent.custo
 echo Nettoyage de toutes les applications systeme
-#adb shell pm clear com.android.providers.calendar
-#adb shell pm clear com.samsung.android.calendar
-#adb shell pm clear com.sec.android.app.desktoplauncher
+adb shell pm clear com.android.providers.calendar
+adb shell pm clear com.samsung.android.calendar
+adb shell pm clear com.sec.android.app.desktoplauncher
 adb shell pm clear android
 adb shell pm clear com.amazon.avod.thirdpartyclient
 adb shell pm clear com.android.bluetooth
